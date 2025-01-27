@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 
-from app_python.settings import HOST, PORT
+from settings import HOST, PORT
 from router import router
 
 app = FastAPI()
