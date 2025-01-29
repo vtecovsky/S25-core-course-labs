@@ -1,4 +1,4 @@
-### Best Practices Applied in the Web Application
+# Best Practices Applied in the Web Application
 
 1. **Type Annotations**:  
    - Used type hints in function signatures to improve code readability and ensure type safety.
@@ -11,7 +11,7 @@
 
 ---
 
-### Coding Standards
+## Coding Standards
 
 - **Code Linting and Formatting**:  
   - Integrated **Ruff** to enforce PEP 8 standards and maintain consistent style across in the code
@@ -21,7 +21,7 @@
 
 ---
 
-### Testing
+## Testing
 
 1. **Unit Testing**:  
    - Implemented tests for the `/msc_time` endpoint using FastAPI's `TestClient`.
