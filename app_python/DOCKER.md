@@ -1,10 +1,10 @@
 # Dockerfile Best Practices
-## 1. **Use Official Base Images**
+## 1. **Used Official Base Images**
 Using official lightweight base image ensures reliability, security, and performance.
 ```dockerfile
 FROM python:3.12-slim
 ```
-## 2. **Use multistage builds** 
+## 2. **Used multistage builds** 
 ```dockerfile
 FROM python:3.12-slim as builder
 ```
@@ -19,10 +19,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc libpq-dev && \
     rm -rf /var/lib/apt/lists/*
 ```
-## 5. **Use rootless user** 
+## 5. **Used rootless user** 
 ```dockerfile
 RUN useradd -m python_user && chown -R python_user:python_user /app
 USER python_user
 ```
 ## 5. **Copy only necessary files** 
-Compose Using .dockerignore properly
+Properly use .dockerignore
