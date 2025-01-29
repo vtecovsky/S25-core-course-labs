@@ -1,11 +1,11 @@
-# Overview
+# Go Web Application: Moscow Time API
 
-This Python web application displays the current time in Moscow using FastAPI.
+This Go web application displays the current time in Moscow using the `net/http` package.
 
 ## Features
 - Displays the current time in Moscow in the format `YYYY-MM-DD HH:MM:SS`
-- Handles time zones using the `pytz` library
-- Built with FastAPI
+- Handles time zones using Go’s `time.LoadLocation`
+- Built with Go standard `net/http` package
 
 ## Endpoints
 ### `GET /msc_time`
@@ -14,11 +14,11 @@ Returns the current time in Moscow.
 **Response:**
 ```json
 {
-  "current_time": "2025-01-25 12:34:56"
+  "current_time_in_moscow": "2025-01-25 12:34:56"
 }
 ```
 
-## Local Installation
+## Installation
 
 Follow the steps below to set up the application locally on your machine.
 
@@ -28,22 +28,17 @@ Start by cloning the repository to your local machine:
 
 ```bash
 git clone https://github.com/vtecovsky/S25-core-course-labs
-cd app_python
-```
 
-### 2. Setup a virtual environment
-```bash
-python3 -m venv venv
-source venv/bin/activate
+cd app_golang
 ```
-
 
 ### 2. Install dependencies
+
 ```bash
-pip install -r requirements.txt
+go mod tidy
 ```
 
-### 3. Running
+### 3. Running the Application
 ```bash
-python main.py
+go run main.go
 ```
