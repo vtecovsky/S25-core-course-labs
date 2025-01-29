@@ -67,8 +67,6 @@ docker build -t vtecovsky/app_golang:latest .
 
 ### Pull
 
-Start by cloning the repository to your local machine:
-
 ```bash
 docker pull vtecovsky/app_golang:latest
 ```
