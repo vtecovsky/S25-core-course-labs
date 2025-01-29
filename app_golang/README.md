@@ -47,3 +47,36 @@ go mod tidy
 ```bash
 go run main.go
 ```
+
+## Running in Docker container
+
+### 1. Clone the Repository
+
+Start by cloning the repository to your local machine:
+
+```bash
+git clone https://github.com/vtecovsky/S25-core-course-labs
+cd app_golang
+```
+
+### Build
+
+```bash
+docker build -t vtecovsky/app_golang:latest .
+```
+
+### Pull
+
+Start by cloning the repository to your local machine:
+
+```bash
+docker pull vtecovsky/app_golang:latest
+```
+
+### Run
+
+Start by cloning the repository to your local machine:
+
+```bash
+docker run -p 8080:8080 vtecovsky/app_golang:latest
+```
