@@ -3,15 +3,19 @@
 This Go web application displays the current time in Moscow using the `net/http` package.
 
 ## Features
+
 - Displays the current time in Moscow in the format `YYYY-MM-DD HH:MM:SS`
 - Handles time zones using Go’s `time.LoadLocation`
 - Built with Go standard `net/http` package
 
 ## Endpoints
+
 ### `GET /msc_time`
+
 Returns the current time in Moscow.
 
 **Response:**
+
 ```json
 {
   "current_time_in_moscow": "2025-01-25 12:34:56"
@@ -39,6 +43,7 @@ go mod tidy
 ```
 
 ### 3. Running the Application
+
 ```bash
 go run main.go
 ```
