@@ -9,29 +9,71 @@ on:
       - "app_python/**"
 
 jobs:
-  build-and-test:
+  lint:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-
       - name: Install dependencies
         run: |
           cd app_python
           pip install -r requirements.txt
-
       - name: Lint
         run: |
           cd app_python
           ruff check .
 
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          cd app_python
+          pip install -r requirements.txt
       - name: Test
         run: |
           cd app_python
           pytest
+
+  build-and-push:
+    runs-on: ubuntu-latest
+    needs: test
+    env:
+      DOCKER_IMAGE_NAME: "app_python"
+      DOCKER_TAG: "latest"
+      DOCKER_FILE_PATH: "app_python/Dockerfile"
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Docker image
+        run: |
+          echo "Building Docker image: $DOCKER_IMAGE_NAME:$DOCKER_TAG"
+          docker build -f $DOCKER_FILE_PATH -t $DOCKER_IMAGE_NAME:$DOCKER_TAG .
+
+      - name: Push Docker image
+        run: |
+          echo "Pushing Docker image: $DOCKER_IMAGE_NAME:$DOCKER_TAG"
+          docker push $DOCKER_IMAGE_NAME:$DOCKER_TAG
