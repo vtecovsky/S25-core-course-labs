@@ -5,7 +5,7 @@
 Using official lightweight base image ensures reliability, security, and performance.
 
 ```dockerfile
-FROM python:3.12-slim 
+FROM python:3.12-slim
 ```
 
 ## 2. **Used multistage builds**
