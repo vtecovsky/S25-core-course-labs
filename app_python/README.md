@@ -10,7 +10,7 @@ This Python web application displays the current time in Moscow using FastAPI.
 
 ## Endpoints
 
-### `GET /msc_time` 
+### `GET /msc_time`
 
 Returns the current time in Moscow.
 

@@ -69,6 +69,7 @@ jobs:
 
       - name: Build Docker image
         run: |
+          cd app_python
           echo "Building Docker image: $DOCKER_IMAGE_NAME:$DOCKER_TAG"
           docker build -f $DOCKER_FILE_PATH -t $DOCKER_IMAGE_NAME:$DOCKER_TAG .
 
