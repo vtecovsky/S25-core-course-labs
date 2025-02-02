@@ -1,25 +1,28 @@
-from fastapi.testclient import TestClient
 from datetime import datetime
-import pytz
 
-from app_python.app import app
+import pytest
+import pytz
+from fastapi.testclient import TestClient
+
+from src.app import app
 
 client = TestClient(app)
 
 
-def test_get_moscow_time():
+@pytest.mark.asyncio
+async def test_get_moscow_time():
     response = client.get("/msc_time")
     assert response.status_code == 200
 
     data = response.json()
 
-    assert "current_time_in_moscow" in data
+    assert "current_time" in data
 
     moscow_tz = pytz.timezone("Europe/Moscow")
     expected_format = "%Y-%m-%d %H:%M:%S"
 
     try:
-        returned_time_naive = datetime.strptime(data["current_time_in_moscow"], expected_format)
+        returned_time_naive = datetime.strptime(data["current_time"], expected_format)
         returned_time = moscow_tz.localize(returned_time_naive)
     except ValueError:
         assert False, "Time format is invalid"

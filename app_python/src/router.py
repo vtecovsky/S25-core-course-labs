@@ -1,9 +1,12 @@
-from fastapi import APIRouter
-from schema import GetTimeResponse
 import datetime
+
 import pytz
+from fastapi import APIRouter
+
+from src.schema import GetTimeResponse
 
 router = APIRouter()
+
 
 @router.get("/msc_time")
 async def get_moscow_time() -> GetTimeResponse:

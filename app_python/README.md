@@ -22,6 +22,15 @@ Returns the current time in Moscow.
 }
 ```
 
+## Unit Tests
+
+1. **Unit Testing**:  
+   - Implemented tests for the `/msc_time` endpoint using FastAPI's `TestClient`.
+   - Verified response formats and ensured time accuracy within a defined tolerance.
+
+2. **Automated Testing**:  
+   - Used `pytest` for running the test suite
+
 ## Local Installation
 
 Follow the steps below to set up the application locally on your machine.
@@ -51,7 +60,7 @@ pip install -r requirements.txt
 ### 3. Running
 
 ```bash
-python main.py
+python -m src.app
 ```
 
 ## Running in Docker container
