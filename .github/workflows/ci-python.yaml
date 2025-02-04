@@ -83,7 +83,7 @@ jobs:
 
   build-and-push:
     runs-on: ubuntu-latest
-    needs: snyc-check
+    needs: snyk-check
     env:
       DOCKER_IMAGE_NAME: "app_python"
       DOCKER_TAG: "latest"
