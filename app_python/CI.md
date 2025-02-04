@@ -28,7 +28,7 @@ Runs unit tests to validate the correctness of the application.
 - Caches dependencies to optimize speed.
 - Fails the pipeline if any test case does not pass.
 
-### 3. Snyk Security Scan 
+### 3. Snyk Security Scan
 
 Detects and reports vulnerabilities in the application dependencies.
 
