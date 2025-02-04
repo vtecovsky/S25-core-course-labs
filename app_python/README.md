@@ -1,3 +1,5 @@
+[![CI for Python app](https://github.com/vtecovsky/S25-core-course-labs/actions/workflows/ci-python.yaml/badge.svg?branch=lab-3)](https://github.com/vtecovsky/S25-core-course-labs/actions/workflows/ci-python.yaml)
+
 # Overview
 
 This Python web application displays the current time in Moscow using FastAPI.
@@ -18,7 +20,7 @@ Returns the current time in Moscow.
 
 ```json
 {
-  "current_time_in_moscow": "2025-01-25 12:34:56"
+  "current_time": "2025-01-25 12:34:56"
 }
 ```
 
@@ -96,15 +98,22 @@ Start by cloning the repository to your local machine:
 docker run --rm -p 8000:8000 vtecovsky/app_python:latest
 ```
 
-## CI Workflow
+# **CI Workflow** 🚀  
 
-Pipeline runs when changes are made to app_python/** path
+My **Continuous Integration (CI) pipeline** is designed to ensure code quality, reliability, and smooth deployment. The workflow is triggered whenever changes are made to the `app_python/` directory.  
 
-In total, I have 3 jobs in CI:
-1. Lint (Using Ruff)
-2. Test (Unit testing with pytest)
-3. Build and push job, includes the following steps:
-   1. Login
-   2. Build
-   3. Push
+## **Pipeline Overview**  
+The CI process consists of three key jobs:  
 
+### 🔍 **1. Linting** (Code Quality Check)  
+- Uses **Ruff** to enforce coding standards and detect potential issues.  
+
+### 🧪 **2. Testing** (Unit Tests)  
+- Runs **pytest** to validate the correctness of the endpoint.  
+- Ensures all tests pass before proceeding to the next stage.  
+
+### 📦 **3. Build & Push** (Deployment)  
+This step prepares and deploys the application using Docker:  
+1. **Login** – Authenticates with Docker Hub.  
+2. **Build** – Creates a Docker image of the application.  
+3. **Push** – Uploads the built image to the container registry.  
