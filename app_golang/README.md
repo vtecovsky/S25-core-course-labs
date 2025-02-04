@@ -78,3 +78,25 @@ Start by cloning the repository to your local machine:
 ```bash
 docker run -p 8080:8080 vtecovsky/app_golang:latest
 ```
+
+# **CI Workflow** 🚀  
+
+My **Continuous Integration (CI) pipeline** is designed to ensure code quality, reliability, and smooth deployment. The workflow is triggered whenever changes are made to the `app_go/` directory.
+
+## **Pipeline Overview**  
+The CI process consists of three key jobs:  
+
+### 🔍 **1. Linting** 
+- Uses **Golangci-lint** to enforce coding standards and detect potential issues.
+- Ensures that the code follows Go best practices and is free from linting errors.
+
+### 🧪 **2. Testing**
+- Runs **Go test** to validate the correctness of the application.
+- Ensures all tests pass before proceeding to the next stage.
+
+### 📦 **3. Build & Push**
+This step prepares and deploys the application using Docker:  
+1. **Login** – Authenticates with Docker Hub.
+2. **Build** – Creates a Docker image of the application.
+3. **Push** – Uploads the built image to the container registry.
+

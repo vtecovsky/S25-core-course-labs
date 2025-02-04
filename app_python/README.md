@@ -105,14 +105,14 @@ My **Continuous Integration (CI) pipeline** is designed to ensure code quality, 
 ## **Pipeline Overview**  
 The CI process consists of three key jobs:  
 
-### 🔍 **1. Linting** (Code Quality Check)  
+### 🔍 **1. Linting**
 - Uses **Ruff** to enforce coding standards and detect potential issues.  
 
-### 🧪 **2. Testing** (Unit Tests)  
+### 🧪 **2. Testing**
 - Runs **pytest** to validate the correctness of the endpoint.  
 - Ensures all tests pass before proceeding to the next stage.  
 
-### 📦 **3. Build & Push** (Deployment)  
+### 📦 **3. Build & Push**  
 This step prepares and deploys the application using Docker:  
 1. **Login** – Authenticates with Docker Hub.  
 2. **Build** – Creates a Docker image of the application.  
