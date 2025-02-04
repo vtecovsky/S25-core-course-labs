@@ -95,3 +95,16 @@ Start by cloning the repository to your local machine:
 ```bash
 docker run --rm -p 8000:8000 vtecovsky/app_python:latest
 ```
+
+## CI Workflow
+
+Pipeline runs when changes are made to app_python/** path
+
+In total, I have 3 jobs in CI:
+1. Lint (Using Ruff)
+2. Test (Unit testing with pytest)
+3. Build and push job, includes the following steps:
+   1. Login
+   2. Build
+   3. Push
+
