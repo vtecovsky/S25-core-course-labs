@@ -1,5 +1,11 @@
 # Terraform
 
+## Best practices
+
+1. Keep sensitive variables secure
+2. Use ``.gitignore`` for terraform generated files
+3. Use ``terraform plan`` before ``terraform apply``
+
 ## Docker 
 
 ```bash
@@ -368,6 +374,7 @@ internal_ip_address_vm_1 = "192.168.10.27"
 internal_ip_address_vm_2 = "192.168.10.12"
 ```
 
+## GitHub
 
 ```bash
 ➜ terraform import github_repository.repo S25-core-course-labs
