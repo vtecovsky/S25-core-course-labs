@@ -30,8 +30,21 @@
     state: started
     enabled: yes
 
-- name: Add current user to the docker group
-  user:
+- name: Add user to Docker group
+  ansible.builtin.user:
     name: "{{ ansible_user }}"
     groups: docker
-    append: yes
+    append: true
+  notify: Restart Docker
+
+- name: Disable root access
+  ansible.builtin.copy:
+    dest: /etc/docker/daemon.json
+    content: |
+      {
+        "userns-remap": "default"
+      }
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart Docker
