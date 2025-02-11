@@ -18,8 +18,8 @@ ENV PYTHONUNBUFFERED=1 \
     PATH="/app/venv/bin:$PATH"
 WORKDIR /app
 COPY --from=builder /app/venv /app/venv
-COPY src/ .
+COPY src/ src/
 RUN useradd -m python_user && chown -R python_user:python_user /app
 USER python_user
 EXPOSE 8000
-CMD ["python", "app.py"]
+CMD ["python", "-m", "src.app"]
