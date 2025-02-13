@@ -38,12 +38,12 @@ Grafana queries logs from Loki and provides a web-based UI for visualization.
 
 ### Python App Logs in Grafana  
 Logs from the Python application displayed in Grafana.  
-![Python App Logs](monitoring/images/python_logs.png)  
+![Python App Logs](images/python_logs.png)  
 
 ### Golang App Logs in Grafana  
 Logs from the Golang application visualized in Grafana.  
-![Golang App Logs](monitoring/images/go_logs.png)  
+![Golang App Logs](images/go_logs.png)  
 
 ### Running Containers (Docker Compose)  
 Overview of the running containers in Docker Compose.  
-![Docker Containers](monitoring/images/containers.png)  
+![Docker Containers](images/containers.png)  
