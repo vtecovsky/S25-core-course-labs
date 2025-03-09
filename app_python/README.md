@@ -24,6 +24,19 @@ Returns the current time in Moscow.
 }
 ```
 
+
+### `GET /visits`
+
+Returns total number of visits.
+
+**Response:**
+
+```json
+{
+  "visits": "11"
+}
+```
+
 ## Unit Tests
 
 1. **Unit Testing**:  
