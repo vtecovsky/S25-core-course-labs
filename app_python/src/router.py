@@ -1,14 +1,17 @@
 import datetime
+import os
+
 import pytz
 from fastapi import APIRouter
 from prometheus_client import generate_latest
 from starlette.responses import PlainTextResponse
+
 from src.schema import GetTimeResponse
-import os
 
 router = APIRouter()
 
 VISITS_FILE = "/data/visits.txt"
+
 
 def increment_visit_counter():
     if not os.path.isfile(VISITS_FILE):
