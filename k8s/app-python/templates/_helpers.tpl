@@ -60,3 +60,11 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+
+{{- define "common.env" }}
+- name: DUMMY_ENV_FROM_TEMPLATE
+  value: "DUMMY_ENV_FROM_TEMPLATE"
+- name: ANOTHER_ENV
+  value: "ANOTHER_VALUE"
+{{- end }}
