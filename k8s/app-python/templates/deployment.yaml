@@ -42,12 +42,8 @@ spec:
             - configMapRef:
                 name: demo-config
           env:
-            {{ include "common.env" . | nindent 12 }}
             - name: MY_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: my-secret
-                  key: password
+              value: "dummy-value"
             - name: DUMMY_ENV
               value: "SOME_DUMMY_ENV"
           ports:
