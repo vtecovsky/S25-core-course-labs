@@ -14,14 +14,14 @@ VISITS_FILE = "./data/visits.txt"
 
 
 def increment_visit_counter():
-    if not os.path.isfile(VISITS_FILE):
+    if not os.path.exists(VISITS_FILE):
+        os.makedirs(os.path.dirname(VISITS_FILE), exist_ok=True)
         with open(VISITS_FILE, "w") as file:
             file.write("0")
     with open(VISITS_FILE, "r") as file:
         v = int(file.read())
     with open(VISITS_FILE, "w") as file:
         file.write(str(v + 1))
-
 
 @router.get("/msc_time")
 async def get_moscow_time() -> GetTimeResponse:
