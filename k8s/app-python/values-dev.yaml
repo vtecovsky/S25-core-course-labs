@@ -4,8 +4,8 @@
 
 replicaCount: 1
 
-env:
-  mode: "default"
+env: 
+  mode: "dev"
 
 image:
   repository: vtecovsky/app_python
