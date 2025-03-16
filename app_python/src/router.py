@@ -10,7 +10,7 @@ from src.schema import GetTimeResponse
 
 router = APIRouter()
 
-VISITS_FILE = "/data/visits.txt"
+VISITS_FILE = "./data/visits.txt"
 
 
 def increment_visit_counter():
